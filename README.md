@@ -32,7 +32,7 @@ Sistema avançado de monitoramento em tempo real dos níveis de toner e contador
 
 1. **Abra o terminal na pasta do projeto:**
    ```bash
-   cd c:\Users\Administrador\press_app
+   cd c:\Users\Administrador\press_app **Substitua pelo local da sua pasta**
    ```
 
 2. **Instale as dependências:**
