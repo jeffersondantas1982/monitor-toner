@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual do Usuário - Monitor de Toner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .manual-content {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            color: var(--text-primary);
+        }
+
+        .manual-section {
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+        }
+
+        .manual-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .manual-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .manual-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .manual-text {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .manual-image-container {
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .manual-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .manual-caption {
+            background: var(--bg-secondary);
+            padding: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .step-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: manual-counter;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+
+        .step-list li::before {
+            counter-increment: manual-counter;
+            content: counter(manual-counter);
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .step-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        .info-box {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .manual-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#gradient1)" />
+                            <path d="M12 14H28V26H12V14Z" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            <path d="M16 18H24M16 22H24" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="20" cy="30" r="2" fill="white" />
+                            <defs>
+                                <linearGradient id="gradient1" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#667eea" />
+                                    <stop offset="100%" stop-color="#764ba2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="header-title">
+                        <h1>Manual do Usuário</h1>
+                        <p class="subtitle">Guia completo do sistema</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="settings-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                        Voltar ao Dashboard
+                    </a>
+                    <button class="settings-btn" id="themeToggle" title="Alternar Tema">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" style="display: none;">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="manual-content">
+            <!-- Introduction -->
+            <div class="manual-section">
+                <h2 class="manual-title">Bem-vindo ao Monitor de Toner</h2>
+                <p class="manual-text">Este sistema permite que você monitore em tempo real o status e os níveis de
+                    toner das impressoras de rede da sua organização. Com ele, você pode antecipar trocas de cartuchos,
+                    identificar impressoras offline e gerenciar todo o parque de impressão de forma centralizada.</p>
+
+                <div class="info-box">
+                    <strong>Dica:</strong> O sistema atualiza automaticamente os dados a cada 5 minutos. Você pode
+                    forçar uma atualização clicando no botão "Atualizar" no topo da página.
+                </div>
+            </div>
+
+            <!-- Dashboard Overview -->
+            <div class="manual-section">
+                <h3 class="manual-subtitle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                        <line x1="9" y1="21" x2="9" y2="9"></line>
+                    </svg>
+                    Visão Geral do Painel
+                </h3>
+                <p class="manual-text">O painel principal exibe todas as impressoras cadastradas em formato de cartões.
+                    Cada cartão contém informações vitais como:</p>
+                <div class="manual-image-container">
+                    <img src="img/manual/dashboard_overview.png" alt="Visão Geral do Dashboard" class="manual-image">
+                    <div class="manual-caption">Painel principal mostrando todas as impressoras monitoradas</div>
+                </div>
+                <ul class="step-list">
+                    <li>
+                        <span class="step-title">Status da Conexão</span>
+                        Indica se a impressora está Online (verde) ou Offline (vermelho).
+                    </li>
+                    <li>
+                        <span class="step-title">Níveis de Toner</span>
+                        Barras de progresso que mostram a porcentagem restante de cada cartucho. Cores mudam conforme o
+                        nível baixa (Amarelo para alerta, Vermelho para crítico).
+                    </li>
+                    <li>
+                        <span class="step-title">Contador de Páginas</span>
+                        Mostra o total de páginas impressas pelo dispositivo.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Dashboard Controls -->
+            <div class="manual-section">
+                <h3 class="manual-subtitle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                    Barra de Ferramentas
+                </h3>
+                <p class="manual-text">No topo da tela, você encontra os controles principais do sistema para
+                    monitoramento e gestão rápida.</p>
+
+                <div class="manual-image-container">
+                    <img src="img/manual/dashboard_controls.png" alt="Barra de Ferramentas e Filtros"
+                        class="manual-image">
+                    <div class="manual-caption">Contadores, botões de ação e filtros de impressoras</div>
+                </div>
+
+                <ul class="step-list">
+                    <li>
+                        <span class="step-title">Contadores (Online / Alertas)</span>
+                        Exibem rapidamente quantas impressoras estão conectadas e quantas requerem atenção (toner baixo
+                        ou erro).
+                    </li>
+                    <li>
+                        <span class="step-title">Configurações</span>
+                        Acesso à tela de descoberta de impressoras e definições de rede.
+                    </li>
+                    <li>
+                        <span class="step-title">Modo Escuro / Claro</span>
+                        Botão (ícone de lua/sol) para alternar a aparência do sistema para melhor conforto visual.
+                    </li>
+                    <li>
+                        <span class="step-title">Atualizar</span>
+                        Força uma atualização imediata do status de todas as impressoras.
+                    </li>
+                    <li>
+                        <span class="step-title">Filtros Rápidos</span>
+                        Botões para visualizar apenas grupos específicos: 'Online', 'Com Alertas' (exibe apenas as que
+                        precisam de atenção), 'HP' ou 'Pantum' (filtra por fabricante).
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Editing Instructions -->
+            <div class="manual-section">
+                <h3 class="manual-subtitle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                    Editando Informações
+                </h3>
+                <p class="manual-text">É possível editar o nome onde a impressora está instalada para facilitar a
+                    identificação. O mesmo procedimento pode ser feito com o número de série, caso ele não seja
+                    carregado automaticamente (situação comum em modelos Pantum).</p>
+
+                <div class="manual-image-container">
+                    <img src="img/manual/edit_card_detail.png" alt="Detalhe da edição do nome" class="manual-image"
+                        style="margin-bottom: 20px;">
+                    <div class="manual-caption">Botão de edição ao lado do nome da impressora</div>
+
+                    <img src="img/manual/edit_serial_example.png" alt="Detalhe da edição do número de série"
+                        class="manual-image" style="margin-top: 20px; border-top: 1px solid var(--border-color);">
+                    <div class="manual-caption">Botão de edição do número de série (comum em impressoras Pantum)</div>
+                </div>
+
+                <ul class="step-list">
+                    <li>
+                        <span class="step-title">Ativar Edição</span>
+                        Clique no botão de edição (ícone de lápis) localizado ao lado do nome da impressora ou do número
+                        de série.
+                    </li>
+                    <li>
+                        <span class="step-title">Alterar Dados</span>
+                        Digite a nova informação no campo que aparecerá.
+                    </li>
+                    <li>
+                        <span class="step-title">Salvar</span>
+                        Clique no botão "Salvar" para confirmar a alteração no sistema.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Settings -->
+            <div class="manual-section">
+                <h3 class="manual-subtitle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
+                    </svg>
+                    Configurações e Descoberta
+                </h3>
+                <p class="manual-text">Na página de configurações, você pode buscar por novas impressoras na rede.</p>
+
+                <div class="manual-image-container">
+                    <img src="img/manual/settings_page.png" alt="Página de Configurações" class="manual-image">
+                    <div class="manual-caption">Interface de descoberta de impressoras por faixa de IP</div>
+                </div>
+
+                <ul class="step-list">
+                    <li>
+                        <span class="step-title">Definir Faixa de IP</span>
+                        Insira o IP inicial e final da sua rede (ex: 192.168.1.1 até 192.168.1.254).
+                    </li>
+                    <li>
+                        <span class="step-title">Iniciar Busca</span>
+                        Clique em "Procurar Impressoras". O sistema irá varrer a rede em busca de dispositivos
+                        compatíveis via protocolo SNMP.
+                    </li>
+                    <li>
+                        <span class="step-title">Salvar Resultados</span>
+                        Ao finalizar, marque as impressoras encontradas que deseja monitorar e clique em "Salvar
+                        Selecionadas".
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Monitor de Toner - Versão 1.0.0</p>
+            <p>Desenvolvido por <a href="https://www.linkedin.com/in/jeffersondantas/" target="_blank">Jefferson
+                    Dantas</a></p>
+        </footer>
+    </div>
+
+    <!-- Script to handle Theme Toggle (aligned with app.js) -->
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        const body = document.body;
+
+        // Check saved preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLight = body.classList.contains('light-mode');
+
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+            if (isLight) {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>
