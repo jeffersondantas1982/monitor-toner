@@ -30,22 +30,22 @@ Sistema avançado de monitoramento em tempo real dos níveis de toner e contador
 
 ### Instalação
 
-1. **Abra o terminal na pasta do projeto:**
+1. **Abra o terminal na pasta do projeto:** (**Substitua pelo local da sua pasta**)
    ```bash
-   cd c:\Users\Administrador\press_app
+   cd c:\Users\Administrador\press_app 
    ```
 
-2. **Instale as dependências:**
+3. **Instale as dependências:**
    ```bash
    npm install
    ```
 
-3. **Inicie o servidor:**
+4. **Inicie o servidor:**
    ```bash
    npm start
    ```
 
-4. **Acesse no navegador:**
+5. **Acesse no navegador:**
    Abra `http://localhost:3000`
 
 ## 🔧 Configuração e Uso
