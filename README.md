@@ -100,15 +100,25 @@ taskkill /F /IM node.exe
 ```
 
 ## 📝 Estrutura de Arquivos
+
+O projeto está organizado da seguinte forma:
+
 ```
 press_app/
-├── config/
-│   └── printers.json       # Banco de dados local das impressoras
-├── public/
-│   ├── js/app.js           # Lógica do Dashboard
-│   └── css/styles.css      # Estilos Visuais
-├── server.js               # Backend API e Serviço SNMP
-└── README.md               # Documentação
+├── config/                 # Configurações e Persistência
+│   ├── printers.json       # Banco de dados local das impressoras
+│   └── settings.json       # Configurações globais do sistema
+├── public/                 # Interface do Usuário (Frontend)
+│   ├── css/                # Estilos (CSS)
+│   ├── img/                # Assets e Imagens do Manual
+│   ├── js/                 # Lógica do lado do cliente
+│   ├── index.html          # Dashboard Principal
+│   ├── manual.html         # Manual do Usuário
+│   ├── install.html        # Guia de Instalação
+│   └── settings.html       # Painel de Configurações
+├── server.js               # Servidor Backend (Node.js + SNMP)
+├── package.json            # Dependências e Scripts
+└── README.md               # Documentação Principal
 ```
 
 ---
