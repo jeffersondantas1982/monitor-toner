@@ -1,0 +1,24 @@
+{
+  "name": "printer-toner-monitor",
+  "version": "1.0.0",
+  "description": "Network printer toner level monitoring application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "printer",
+    "snmp",
+    "monitoring",
+    "toner"
+  ],
+  "author": "Jefferson Dantas",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "net-snmp": "^3.11.2",
+    "node-cron": "^3.0.3"
+  }
+}

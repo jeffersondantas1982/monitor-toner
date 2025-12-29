@@ -1,0 +1,94 @@
+{
+  "printers": [
+    {
+      "id": 1,
+      "name": "RECEPÇÃO DO SAE",
+      "ip": "172.17.27.101",
+      "model": "HP LaserJet MFP E42540",
+      "manufacturer": "HP",
+      "location": "IP 172.17.27.101",
+      "serial": "BRBSS190KY"
+    },
+    {
+      "id": 2,
+      "name": "PORTARIA DO SAE",
+      "ip": "172.17.27.102",
+      "model": "P3300DW",
+      "manufacturer": "PANTUM",
+      "location": "IP 172.17.27.102",
+      "serial": "\u0000\u0000\u0000\u0000"
+    },
+    {
+      "id": 3,
+      "name": "CPD",
+      "ip": "172.17.27.103",
+      "model": "P3300DW",
+      "manufacturer": "PANTUM",
+      "location": "IP 172.17.27.103",
+      "serial": "\u0000\u0000\u0000\u0000"
+    },
+    {
+      "id": 4,
+      "name": "ALMOXARIFADO",
+      "ip": "172.17.27.104",
+      "model": "P3300DW",
+      "manufacturer": "PANTUM",
+      "location": "IP 172.17.27.104",
+      "serial": "\u0000\u0000\u0000\u0000"
+    },
+    {
+      "id": 5,
+      "name": "SALA DE XEROX",
+      "ip": "172.17.27.105",
+      "model": "HP LaserJet MFP E42540",
+      "manufacturer": "HP",
+      "location": "IP 172.17.27.105",
+      "serial": "BRBSS1909P"
+    },
+    {
+      "id": 6,
+      "name": "TB",
+      "ip": "172.17.27.106",
+      "model": "HP LaserJet MFP E42540",
+      "manufacturer": "HP",
+      "location": "IP 172.17.27.106",
+      "serial": "BRBSS19001"
+    },
+    {
+      "id": 7,
+      "name": "LABORATÓRIO",
+      "ip": "172.17.27.107",
+      "model": "HP LaserJet MFP E42540",
+      "manufacturer": "HP",
+      "location": "IP 172.17.27.107",
+      "serial": "BRBSS190CV"
+    },
+    {
+      "id": 8,
+      "name": "RH",
+      "ip": "172.17.27.108",
+      "model": "P3300DW",
+      "manufacturer": "PANTUM",
+      "location": "IP 172.17.27.108",
+      "serial": "\u0000\u0000\u0000\u0000"
+    },
+    {
+      "id": 9,
+      "name": "SALA DE XEROX",
+      "ip": "172.17.27.109",
+      "model": "HPA47844",
+      "manufacturer": "HP",
+      "location": "IP 172.17.27.109",
+      "serial": "BRBSSB70PN"
+    },
+    {
+      "id": 10,
+      "name": "UTI",
+      "ip": "172.17.27.110",
+      "model": "P3300DW",
+      "manufacturer": "PANTUM",
+      "location": "IP 172.17.27.110",
+      "serial": "\u0000\u0000\u0000\u0000"
+    }
+  ]
+}

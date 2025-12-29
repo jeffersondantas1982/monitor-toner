@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - Monitor de Toner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <a href="index.html" class="back-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Voltar
+                    </a>
+                    <div class="header-title">
+                        <h1>Configurações</h1>
+                        <p class="subtitle">Gerenciar impressoras e configurações de rede</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Settings Content -->
+        <div class="settings-content">
+            <!-- IP Range Configuration -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h2>Range de IPs</h2>
+                    <p>Defina o intervalo de endereços IP para descobrir impressoras automaticamente</p>
+                </div>
+
+                <div class="ip-range-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startIP">IP Inicial</label>
+                            <input type="text" id="startIP" placeholder="172.17.27.101"
+                                pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$">
+                            <span class="form-hint">Exemplo: 172.17.27.101</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="endIP">IP Final</label>
+                            <input type="text" id="endIP" placeholder="172.17.27.110"
+                                pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$">
+                            <span class="form-hint">Exemplo: 172.17.27.110</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" id="discoverBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg>
+                        Descobrir Impressoras
+                    </button>
+                </div>
+            </section>
+
+            <!-- Discovery Progress -->
+            <div class="discovery-progress" id="discoveryProgress" style="display: none;">
+                <div class="progress-content">
+                    <div class="spinner"></div>
+                    <p id="progressText">Escaneando rede...</p>
+                </div>
+            </div>
+
+            <!-- Discovered Printers -->
+            <section class="settings-section" id="discoveredSection" style="display: none;">
+                <div class="section-header">
+                    <h2>Impressoras Descobertas</h2>
+                    <p>Selecione as impressoras que deseja monitorar</p>
+                </div>
+
+                <div class="discovered-printers" id="discoveredPrinters">
+                    <!-- Printer cards will be inserted here -->
+                </div>
+
+                <div class="section-actions">
+                    <button class="btn btn-success" id="savePrintersBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z" />
+                            <polyline points="17 21 17 13 7 13 7 21" />
+                            <polyline points="7 3 7 8 15 8" />
+                        </svg>
+                        Salvar Configuração
+                    </button>
+                    <button class="btn btn-secondary" id="selectAllBtn">Selecionar Todas</button>
+                    <button class="btn btn-secondary" id="deselectAllBtn">Desmarcar Todas</button>
+                </div>
+            </section>
+
+            <!-- Current Printers -->
+            <section class="settings-section">
+                <div class="section-header">
+                    <h2>Impressoras Configuradas</h2>
+                    <p>Impressoras atualmente sendo monitoradas</p>
+                </div>
+
+                <div class="current-printers" id="currentPrinters">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        <p>Carregando...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">
+            <div class="toast-content">
+                <svg class="toast-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <span class="toast-message"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/settings.js"></script>
+</body>
+
+</html>
