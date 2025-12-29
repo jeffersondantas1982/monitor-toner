@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Instalação - Monitor de Toner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .manual-content {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            color: var(--text-primary);
+        }
+
+        .manual-section {
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+        }
+
+        .manual-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .manual-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .manual-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .manual-text {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #4facfe;
+            margin: 16px 0;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .code-block::after {
+            content: 'terminal';
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .step-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: manual-counter;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+        }
+
+        .step-list li::before {
+            counter-increment: manual-counter;
+            content: counter(manual-counter);
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 32px;
+            height: 32px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .step-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+
+        .info-box {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .manual-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <div class="logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="40" height="40" rx="8" fill="url(#gradient1)" />
+                            <path d="M12 14H28V26H12V14Z" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="20" cy="30" r="2" fill="white" />
+                            <defs>
+                                <linearGradient id="gradient1" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#667eea" />
+                                    <stop offset="100%" stop-color="#764ba2" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="header-title">
+                        <h1>Guia de Instalação</h1>
+                        <p class="subtitle">Configurando o seu servidor de monitoramento</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <a href="manual.html" class="settings-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Voltar ao Manual
+                    </a>
+                    <button class="settings-btn" id="themeToggle" title="Alternar Tema">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" style="display: none;">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="manual-content">
+            <!-- Prerequisites -->
+            <div class="manual-section">
+                <h2 class="manual-title">Pré-requisitos</h2>
+                <p class="manual-text">Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em seu
+                    servidor ou computador:</p>
+
+                <ul class="step-list">
+                    <li>
+                        <span class="step-title">Node.js (LTS)</span>
+                        O motor que executa o sistema. Recomenda-se a versão 18 ou superior.
+                        <a href="https://nodejs.org/" target="_blank" style="color: #4facfe;">Baixar aqui</a>
+                    </li>
+                    <li>
+                        <span class="step-title">Git</span>
+                        Necessário para clonar e atualizar o repositório.
+                        <a href="https://git-scm.com/" target="_blank" style="color: #4facfe;">Baixar aqui</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Steps -->
+            <div class="manual-section">
+                <h3 class="manual-subtitle">Passo a Passo de Instalação</h3>
+
+                <ul class="step-list">
+                    <li>
+                        <span class="step-title">Clonar o Repositório</span>
+                        Abra o terminal (PowerShell ou Prompt de Comando) e execute:
+                        <div class="code-block">git clone https://github.com/jeffersondantas1982/monitor-toner.git</div>
+                    </li>
+                    <li>
+                        <span class="step-title">Acessar a Pasta</span>
+                        Entre no diretório do projeto:
+                        <div class="code-block">cd monitor-toner</div>
+                    </li>
+                    <li>
+                        <span class="step-title">Instalar Dependências</span>
+                        Baixe todos os pacotes necessários via NPM:
+                        <div class="code-block">npm install</div>
+                    </li>
+                    <li>
+                        <span class="step-title">Iniciar o Sistema</span>
+                        Inicie o servidor de monitoramento:
+                        <div class="code-block">npm start</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Execution -->
+            <div class="manual-section">
+                <h3 class="manual-subtitle">Acessando o Sistema</h3>
+                <p class="manual-text">Uma vez iniciado, o painel estará disponível nos seguintes endereços:</p>
+
+                <div class="info-box">
+                    <strong>Local:</strong> <code style="color: #4facfe;">http://localhost:3000</code><br>
+                    <strong>Rede:</strong> <code style="color: #4facfe;">http://[IP-DO-SERVIDOR]:3000</code>
+                </div>
+
+                <p class="manual-text">Para descobrir o IP do servidor, você pode usar o comando <code
+                        style="color: #4facfe;">ipconfig</code> no Windows ou <code
+                        style="color: #4facfe;">ifconfig</code> no Linux.</p>
+            </div>
+
+            <!-- Automated Script -->
+            <div class="manual-section">
+                <h3 class="manual-subtitle">Script de Lançamento (Windows)</h3>
+                <p class="manual-text">O projeto inclui um arquivo chamado <code
+                        style="color: #4facfe;">subir_projeto.bat</code> que pode ser adaptado para automatizar tarefas
+                    de atualização e inicialização.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Monitor de Toner - Guia de Instalação</p>
+            <p>Desenvolvido por <a href="https://www.linkedin.com/in/jeffersondantas/" target="_blank">Jefferson
+                    Dantas</a></p>
+        </footer>
+    </div>
+
+    <!-- Script to handle Theme Toggle -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLight = body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+            if (isLight) {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>
