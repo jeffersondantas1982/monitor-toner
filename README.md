@@ -1,6 +1,20 @@
 # Monitor de Toner - Impressoras de Rede
 
+![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Node](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)
+![SNMP](https://img.shields.io/badge/protocol-SNMPv1%2Fv2c-orange.svg)
+
 Sistema avançado de monitoramento em tempo real dos níveis de toner e contadores de páginas de impressoras de rede usando protocolo SNMP. Desenvolvido para facilitar a gestão do parque de impressão.
+
+## 📚 Documentação
+
+- **[Manual do Usuário](public/manual.html)** - Guia completo de uso
+- **[Documentação Técnica](TECHNICAL.md)** - Arquitetura e desenvolvimento
+- **[Documentação da API](API.md)** - Endpoints REST e exemplos
+- **[Referência SNMP OIDs](SNMP_OIDS.md)** - Lista completa de OIDs
+- **[Guia de Contribuição](CONTRIBUTING.md)** - Como contribuir
+- **[Changelog](CHANGELOG.md)** - Histórico de versões
 
 ## 📋 Características Principais
 
@@ -120,6 +134,64 @@ press_app/
 ├── package.json            # Dependências e Scripts
 └── README.md               # Documentação Principal
 ```
+
+---
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Por favor, leia o [Guia de Contribuição](CONTRIBUTING.md) para detalhes sobre como contribuir com o projeto.
+
+### Como Contribuir
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/NovaFeature`)
+3. Commit suas mudanças (`git commit -m 'feat: adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/NovaFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+**Resumo da Licença MIT:**
+- ✅ Uso comercial permitido
+- ✅ Modificação permitida
+- ✅ Distribuição permitida
+- ✅ Uso privado permitido
+- ℹ️ Sem garantia
+- ℹ️ Licença e copyright devem ser incluídos
+
+## 🔗 Links Úteis
+
+- **Repositório**: [GitHub](https://github.com/jeffersondantas1982/press_app)
+- **Desenvolvedor**: [Jefferson Dantas - LinkedIn](https://www.linkedin.com/in/jeffersondantas/)
+- **Issues**: [Reportar Bug](https://github.com/jeffersondantas1982/press_app/issues)
+- **Documentação SNMP**: [RFC 3805 - Printer MIB v2](https://www.rfc-editor.org/rfc/rfc3805)
+
+## 🌟 Recursos Futuros
+
+- [ ] Suporte para impressoras Brother, Canon e Epson
+- [ ] Notificações por email quando toner estiver baixo
+- [ ] Gráficos de histórico de consumo
+- [ ] Exportação de relatórios em PDF
+- [ ] Aplicativo mobile
+- [ ] Suporte multi-idioma
+- [ ] Dashboard com métricas avançadas
+
+## 💡 Suporte
+
+Se você encontrar algum problema ou tiver sugestões:
+
+1. Verifique as [Issues existentes](https://github.com/jeffersondantas1982/press_app/issues)
+2. Leia a [Documentação Técnica](TECHNICAL.md)
+3. Consulte o [Manual do Usuário](public/manual.html)
+4. Abra uma nova issue descrevendo o problema
+
+## 🙏 Agradecimentos
+
+- Comunidade Node.js
+- Desenvolvedores do net-snmp
+- Todos que contribuíram com feedback e testes
 
 ---
 **Desenvolvido para máxima eficiência na gestão de impressão.** 🖨️🚀
