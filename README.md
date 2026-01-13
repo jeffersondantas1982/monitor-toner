@@ -10,6 +10,7 @@ Sistema avançado de monitoramento em tempo real dos níveis de toner e contador
 ## 📚 Documentação
 
 - **[Manual do Usuário](public/manual.html)** - Guia completo de uso
+- **[🐳 Guia Docker](DOCKER.md)** - Executar com Docker/Containers
 - **[Documentação Técnica](TECHNICAL.md)** - Arquitetura e desenvolvimento
 - **[Documentação da API](API.md)** - Endpoints REST e exemplos
 - **[Referência SNMP OIDs](SNMP_OIDS.md)** - Lista completa de OIDs
@@ -36,6 +37,24 @@ Sistema avançado de monitoramento em tempo real dos níveis de toner e contador
 - ✅ **Alertas Visuais**: Indicadores claros para impressoras offline ou com toner baixo.
 
 ## 🚀 Guia de Início Rápido
+
+### Opção 1: Docker (🌟 Recomendado)
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/jeffersondantas1982/monitor-toner.git
+cd monitor-toner
+
+# 2. Inicie com Docker Compose
+docker-compose up -d
+
+# 3. Acesse no navegador
+http://localhost:3000
+```
+
+**Veja o [🐳 Guia Docker](DOCKER.md) para mais opções e configurações.**
+
+### Opção 2: Instalação Local
 
 ### Pré-requisitos
 - Node.js 14 ou superior ([Download](https://nodejs.org/))

@@ -5,6 +5,22 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 O formato é baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/),
 e este projeto adere ao [Semantic Versioning](https://semver.org/lang/pt-BR/).
 
+## [1.1.0] - 2026-01-13
+
+### Adicionado
+- 🐳 Suporte completo para Docker
+- Dockerfile otimizado com multi-stage build e Alpine Linux
+- docker-compose.yml para fácil deployment
+- .dockerignore para otimização de build
+- DOCKER.md - Documentação completa de uso com Docker
+- Health check integrado no container
+- Configuração de recursos (CPU/Memory limits)
+- Usuário não-root para segurança
+
+### Melhorado
+- README atualizado com instruções Docker
+- Instalação agora recomenda Docker como opção principal
+
 ## [1.0.1] - 2026-01-07
 
 ### Adicionado

@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  monitor-toner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: monitor-toner:latest
+    container_name: monitor-toner
+    restart: unless-stopped
+    
+    ports:
+      - "3000:3000"
+    
+    volumes:
+      # Persistir configurações das impressoras
+      - ./config:/app/config
+      # Opcional: Logs
+      - ./logs:/app/logs
+    
+    environment:
+      - NODE_ENV=production
+      - TZ=America/Sao_Paulo
+    
+    networks:
+      - printer-network
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/api/printers', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    
+    # Recursos
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+networks:
+  printer-network:
+    driver: bridge

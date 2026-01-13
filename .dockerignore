@@ -1,0 +1,55 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Git
+.git
+.gitignore
+
+# Documentation (não necessária no container)
+*.md
+!README.md
+LICENSE
+
+# Test files
+test*
+*_test.js
+*.test.js
+
+# Scripts de diagnóstico
+broad_scan_pantum.js
+check_api_response.js
+compare_pantum_oids.js
+deep_scan_pantum.js
+diag_pantum_serial.js
+scan_pantum_oids.js
+test_serial_logic.js
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Installer
+*.msi
+node-v*.msi
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Artifacts
+.gemini
